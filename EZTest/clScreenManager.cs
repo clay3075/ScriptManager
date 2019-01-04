@@ -24,7 +24,10 @@ namespace EZTest
         public void AddScreen(Control screen)
         {
             _screens.Add(screen);
+            if (_screens.Count == 1) 
+                _screenPanel.Controls.Add(_screens[0]);
         }
+
 
         public void PrevScreen()
         {

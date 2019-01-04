@@ -28,20 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.titleLayout = new System.Windows.Forms.FlowLayoutPanel();
             this.featureSelectionLayout = new System.Windows.Forms.FlowLayoutPanel();
+            this._title = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // titleLayout
-            // 
-            this.titleLayout.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.titleLayout.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.titleLayout.Location = new System.Drawing.Point(0, 0);
-            this.titleLayout.Name = "titleLayout";
-            this.titleLayout.Size = new System.Drawing.Size(450, 57);
-            this.titleLayout.TabIndex = 0;
             // 
             // featureSelectionLayout
             // 
@@ -54,22 +43,31 @@
             this.featureSelectionLayout.Size = new System.Drawing.Size(297, 294);
             this.featureSelectionLayout.TabIndex = 1;
             // 
+            // _title
+            // 
+            this._title.AutoSize = true;
+            this._title.Location = new System.Drawing.Point(167, 30);
+            this._title.Name = "_title";
+            this._title.Size = new System.Drawing.Size(118, 13);
+            this._title.TabIndex = 2;
+            this._title.Text = "Please Select A Project";
+            // 
             // ucFeatureSelection
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this._title);
             this.Controls.Add(this.featureSelectionLayout);
-            this.Controls.Add(this.titleLayout);
             this.Name = "ucFeatureSelection";
             this.Size = new System.Drawing.Size(450, 397);
             this.Load += new System.EventHandler(this.ucFeatureSelection_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.FlowLayoutPanel titleLayout;
         private System.Windows.Forms.FlowLayoutPanel featureSelectionLayout;
+        private System.Windows.Forms.Label _title;
     }
 }

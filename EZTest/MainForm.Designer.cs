@@ -46,6 +46,7 @@
             this.Controls.Add(this.screenPanel);
             this.Name = "MainForm";
             this.Text = "EZTest";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
 
         }

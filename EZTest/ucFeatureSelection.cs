@@ -19,7 +19,6 @@ namespace EZTest
 
         private void ucFeatureSelection_Load(object sender, EventArgs e)
         {
-            //Add title to page
 
         }
     }

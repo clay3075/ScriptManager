@@ -12,9 +12,17 @@ namespace EZTest
 {
     public partial class MainForm : Form
     {
+        private ScreenManager _screenManager;
         public MainForm()
         {
             InitializeComponent();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            _screenManager = new ScreenManager(screenPanel);
+            _screenManager.AddScreen(new ucFeatureSelection());
+            screenPanel.Update();
         }
     }
 }
