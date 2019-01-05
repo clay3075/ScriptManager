@@ -21,7 +21,12 @@ namespace EZTest
         private void MainForm_Load(object sender, EventArgs e)
         {
             _screenManager = new ScreenManager(screenPanel);
-            _screenManager.AddScreen(new ucFeatureSelection());
+            var newScreen = new ucFeatureSelection
+            {
+                ScreenManager = _screenManager,
+                DirectoryPath = @"c:\users\cjred\desktop"
+            };
+            _screenManager.AddScreen(newScreen);
             screenPanel.Update();
         }
     }

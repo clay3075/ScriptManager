@@ -28,6 +28,13 @@ namespace EZTest
                 _screenPanel.Controls.Add(_screens[0]);
         }
 
+        public void AddScreenAndShow(Control screen)
+        {
+            AddScreen(screen);
+            _screenHistory.Push(_screenPanel.Controls[0]);
+            _screenPanel.Controls.Remove(_screenHistory.Peek());
+            _screenPanel.Controls.Add(screen);
+        }
 
         public void PrevScreen()
         {
