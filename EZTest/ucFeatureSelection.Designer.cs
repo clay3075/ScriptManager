@@ -35,7 +35,8 @@
             // 
             // featureSelectionLayout
             // 
-            this.featureSelectionLayout.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.featureSelectionLayout.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.featureSelectionLayout.AutoScroll = true;
             this.featureSelectionLayout.AutoSize = true;
@@ -43,7 +44,7 @@
             this.featureSelectionLayout.Location = new System.Drawing.Point(203, 193);
             this.featureSelectionLayout.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.featureSelectionLayout.Name = "featureSelectionLayout";
-            this.featureSelectionLayout.Size = new System.Drawing.Size(802, 691);
+            this.featureSelectionLayout.Size = new System.Drawing.Size(801, 695);
             this.featureSelectionLayout.TabIndex = 1;
             // 
             // _title
@@ -73,12 +74,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this._title);
             this.Controls.Add(this.featureSelectionLayout);
             this.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Name = "ucFeatureSelection";
-            this.Size = new System.Drawing.Size(1200, 947);
+            this.Size = new System.Drawing.Size(1199, 951);
             this.Load += new System.EventHandler(this.ucFeatureSelection_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
