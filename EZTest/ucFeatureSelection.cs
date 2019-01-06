@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Data;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace EZTest
+namespace ScriptManager
 {
     public partial class ucFeatureSelection : UserControl
     {
@@ -58,12 +59,14 @@ namespace EZTest
                 else
                     tmpContentInfo = new FileInfo(newPath);
 
-                Button tmpButton = new Button();
-                tmpButton.Height = 50;
-                tmpButton.Width = 90;
-                tmpButton.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-                tmpButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-                tmpButton.Text = tmpContentInfo.Name;
+                Button tmpButton = new Button
+                {
+                    Height = 50,
+                    Width = 90,
+                    Anchor = AnchorStyles.Left | AnchorStyles.Right,
+                    AutoSizeMode = AutoSizeMode.GrowAndShrink,
+                    Text = tmpContentInfo.Name
+                };
                 tmpButton.Click += (sender, args) => ButtonClickEvent(tmpContentInfo);
                 featureSelectionLayout.Controls.Add(tmpButton);
             }
@@ -74,17 +77,43 @@ namespace EZTest
             
             if (content.Attributes.HasFlag(FileAttributes.Directory))
             {
-                var newScreen = new ucFeatureSelection();
-                newScreen.DirectoryPath = content.FullName;
-                newScreen.ScreenManager = ScreenManager;
-                newScreen.ShowBackButton = true;
-                
+                var newScreen = new ucFeatureSelection
+                {
+                    DirectoryPath = content.FullName,
+                    ScreenManager = ScreenManager,
+                    ShowBackButton = true
+                };
+
                 ScreenManager.AddScreenAndShow(newScreen);
             }
             else
             {
-                MessageBox.Show($"Run script {content.Name}");
+                var cmd = "";
+                switch (content.Extension)
+                {
+                    case ".py":
+                        cmd = $"python {content.FullName}";
+                        break;
+                    case ".rb":
+                        cmd = $"ruby {content.FullName}";
+                        break;
+                    default:
+                        break;
+                }
+                RunCMD(cmd);
             }
+        }
+
+        private void RunCMD(string cmd)
+        {
+            var tmpProcess = new Process();
+            var startInfo = new ProcessStartInfo()
+            {
+                Arguments = $@"/C {cmd}",
+                FileName = "cmd.exe"
+            };
+            tmpProcess.StartInfo = startInfo;
+            tmpProcess.Start();
         }
 
         private void ucFeatureSelection_Load(object sender, EventArgs e)

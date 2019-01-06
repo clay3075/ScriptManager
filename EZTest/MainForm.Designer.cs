@@ -1,4 +1,4 @@
-﻿namespace EZTest
+﻿namespace ScriptManager
 {
     partial class MainForm
     {
@@ -50,7 +50,7 @@
             this.MaximumSize = new System.Drawing.Size(1232, 1032);
             this.MinimumSize = new System.Drawing.Size(1232, 1032);
             this.Name = "MainForm";
-            this.Text = "EZTest";
+            this.Text = "ScriptManager";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
 

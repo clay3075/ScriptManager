@@ -1,4 +1,4 @@
-﻿namespace EZTest
+﻿namespace ScriptManager
 {
     partial class ucFeatureSelection
     {
@@ -39,12 +39,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.featureSelectionLayout.AutoScroll = true;
-            this.featureSelectionLayout.AutoSize = true;
             this.featureSelectionLayout.BackColor = System.Drawing.SystemColors.Control;
             this.featureSelectionLayout.Location = new System.Drawing.Point(203, 193);
             this.featureSelectionLayout.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.featureSelectionLayout.Name = "featureSelectionLayout";
-            this.featureSelectionLayout.Size = new System.Drawing.Size(801, 695);
+            this.featureSelectionLayout.Size = new System.Drawing.Size(817, 695);
             this.featureSelectionLayout.TabIndex = 1;
             // 
             // _title

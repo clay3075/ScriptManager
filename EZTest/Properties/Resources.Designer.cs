@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EZTest.Properties
+namespace ScriptManager.Properties
 {
 
 
